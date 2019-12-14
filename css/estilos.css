@@ -28,7 +28,6 @@ body {
 	transition: .3s ease all;
 	transform: rotateY(0deg);
 	transform-style: preserve-3d;
-	backface-visibility: hidden;
 	cursor: pointer;
 	z-index: 2;
 }
