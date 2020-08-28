@@ -6,7 +6,7 @@ const tarjeta = document.querySelector('#tarjeta'),
 	  logoMarca = document.querySelector('#logo-marca'),
 	  firma = document.querySelector('#tarjeta .firma p'),
 	  mesExpiracion = document.querySelector('#tarjeta .mes'),
-	  yearExpiracion = document.querySelector('#tarjeta .year');
+	  yearExpiracion = document.querySelector('#tarjeta .year'),
 	  ccv = document.querySelector('#tarjeta .ccv');
 
 // * Volteamos la tarjeta para mostrar el frente.
