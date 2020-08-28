@@ -7,7 +7,9 @@ const tarjeta = document.querySelector('#tarjeta'),
 	  firma = document.querySelector('#tarjeta .firma p'),
 	  mesExpiracion = document.querySelector('#tarjeta .mes'),
 	  yearExpiracion = document.querySelector('#tarjeta .year'),
-	  ccv = document.querySelector('#tarjeta .ccv');
+	  ccv = document.querySelector('#tarjeta .ccv'),
+	  mesSelector = document.getElementById('selectMes'),
+	  yearSelector = document.getElementById('selectYear');
 
 // * Volteamos la tarjeta para mostrar el frente.
 const mostrarFrente = () => {
@@ -29,19 +31,13 @@ btnAbrirFormulario.addEventListener('click', () => {
 
 // * Select del mes generado dinamicamente.
 for(let i = 1; i <= 12; i++){
-	let opcion = document.createElement('option');
-	opcion.value = i;
-	opcion.innerText = i;
-	formulario.selectMes.appendChild(opcion);
+	mesSelector.innerHTML += `<option>${i}</option>`
 }
 
 // * Select del año generado dinamicamente.
 const yearActual = new Date().getFullYear();
-for(let i = yearActual; i <= yearActual + 8; i++){
-	let opcion = document.createElement('option');
-	opcion.value = i;
-	opcion.innerText = i;
-	formulario.selectYear.appendChild(opcion);
+for(let i=0; i<=8; i++){
+	yearSelector.innerHTML += `<option>${yearActual + i}</option>`
 }
 
 // * Input numero de tarjeta
