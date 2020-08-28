@@ -62,17 +62,14 @@ formulario.inputNumero.addEventListener('keyup', (e) => {
 		logoMarca.innerHTML = '';
 	}
 
-	if(valorInput[0] == 4){
-		logoMarca.innerHTML = '';
-		const imagen = document.createElement('img');
-		imagen.src = 'img/logos/visa.png';
-		logoMarca.appendChild(imagen);
-	} else if(valorInput[0] == 5){
-		logoMarca.innerHTML = '';
-		const imagen = document.createElement('img');
-		imagen.src = 'img/logos/mastercard.png';
-		logoMarca.appendChild(imagen);
-	}
+    switch(valorInput[0]){
+        case '4':
+            logoMarca.innerHTML = `<img src="img/logos/visa.png">`
+            break
+        case '5':
+            logoMarca.innerHTML = `<img src="img/logos/mastercard.png">`
+            break
+    }
 
 	// Volteamos la tarjeta para que el usuario vea el frente.
 	mostrarFrente();
