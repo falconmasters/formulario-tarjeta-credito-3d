@@ -81,7 +81,7 @@ formulario.inputNombre.addEventListener('keyup', (e) => {
 
 	formulario.inputNombre.value = valorInput.replace(/[0-9]/g, '');
 	nombreTarjeta.textContent = valorInput;
-	firma.textContent = valorInput;
+	firma.textContent = valorInput.replace(/[0-9]/g, '');
 
 	if(valorInput == ''){
 		nombreTarjeta.textContent = 'Jhon Doe';
