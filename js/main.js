@@ -1,118 +1,118 @@
-const tarjeta = document.querySelector('#tarjeta'),
-	  btnAbrirFormulario = document.querySelector('#btn-abrir-formulario'),
-	  formulario = document.querySelector('#formulario-tarjeta'),
-	  numeroTarjeta = document.querySelector('#tarjeta .numero'),
-	  nombreTarjeta = document.querySelector('#tarjeta .nombre'),
-	  logoMarca = document.querySelector('#logo-marca'),
-	  firma = document.querySelector('#tarjeta .firma p'),
-	  mesExpiracion = document.querySelector('#tarjeta .mes'),
-	  yearExpiracion = document.querySelector('#tarjeta .year'),
-	  ccv = document.querySelector('#tarjeta .ccv'),
-	  mesSelector = document.getElementById('selectMes'),
+const card = document.querySelector('#card'),
+	  btnOpenForm = document.querySelector('#btn-open-form'),
+	  form = document.querySelector('#card-form'),
+	  cardNumber = document.querySelector('#card .number'),
+	  cardName = document.querySelector('#card .name'),
+	  bankLogo = document.querySelector('#bank-logo'),
+	  firm = document.querySelector('#card .firm p'),
+	  monthExpiration = document.querySelector('#card .month'),
+	  yearExpiration = document.querySelector('#card .year'),
+	  ccv = document.querySelector('#card .ccv'),
+	  monthSelector = document.getElementById('selectMonth'),
 	  yearSelector = document.getElementById('selectYear');
 
-// * Volteamos la tarjeta para mostrar el frente.
-const mostrarFrente = () => {
-	if(tarjeta.classList.contains('active')){
-		tarjeta.classList.remove('active');
+// * Toggle the card to show the front
+const showFront = () => {
+	if(card.classList.contains('active')){
+		card.classList.remove('active');
 	}
 }
 
-// * Rotacion de la tarjeta
-tarjeta.addEventListener('click', () => {
-	tarjeta.classList.toggle('active');
+// * Rotation of the card
+card.addEventListener('click', () => {
+	card.classList.toggle('active');
 });
 
-// * Boton de abrir formulario
-btnAbrirFormulario.addEventListener('click', () => {
-	btnAbrirFormulario.classList.toggle('active');
-	formulario.classList.toggle('active');
+// * BUTTON: Open form
+btnOpenForm.addEventListener('click', () => {
+	btnOpenForm.classList.toggle('active');
+	form.classList.toggle('active');
 });
 
-// * Select del mes generado dinamicamente.
+// * Dynamic SELECT: Month
 for(let i = 1; i <= 12; i++){
-	mesSelector.innerHTML += `<option>${i}</option>`
+	monthSelector.innerHTML += `<option>${i}</option>`
 }
 
-// * Select del año generado dinamicamente.
-const yearActual = new Date().getFullYear();
+// * Dynamic SELECT: Year
+const currentYear = new Date().getFullYear();
 for(let i=0; i<=8; i++){
-	yearSelector.innerHTML += `<option>${yearActual + i}</option>`
+	yearSelector.innerHTML += `<option>${currentYear + i}</option>`
 }
 
-// * Input numero de tarjeta
-formulario.inputNumero.addEventListener('keyup', (e) => {
-	let valorInput = e.target.value;
+// * INPUT: Card number
+form.inputNumber.addEventListener('keyup', (e) => {
+	let inputValue = e.target.value;
 
-	formulario.inputNumero.value = valorInput
-	// Eliminamos espacios en blanco
+	form.inputNumber.value = inputValue
+	// Delete white spaces
 	.replace(/\s/g, '')
-	// Eliminar las letras
+	// Delete letters
 	.replace(/\D/g, '')
-	// Ponemos espacio cada cuatro numeros
+	// Add a white space each 4 numbers
 	.replace(/([0-9]{4})/g, '$1 ')
-	// Elimina el ultimo espaciado
+	// Delete last white space
 	.trim();
 
-	numeroTarjeta.textContent = valorInput;
+	cardNumber.textContent = inputValue;
 
-	if(valorInput == ''){
-		numeroTarjeta.textContent = '#### #### #### ####';
+	if(inputValue == ''){
+		cardNumber.textContent = '#### #### #### ####';
 
-		logoMarca.innerHTML = '';
+		bankLogo.innerHTML = '';
 	}
 
-    switch(valorInput[0]){
+    switch(inputValue[0]){
         case '4':
-            logoMarca.innerHTML = `<img src="img/logos/visa.png">`
+            bankLogo.innerHTML = `<img src="img/logos/visa.png">`
             break
         case '5':
-            logoMarca.innerHTML = `<img src="img/logos/mastercard.png">`
+            bankLogo.innerHTML = `<img src="img/logos/mastercard.png">`
             break
     }
 
-	// Volteamos la tarjeta para que el usuario vea el frente.
-	mostrarFrente();
+	// We toggle the card to show the front
+	showFront();
 });
 
-// * Input nombre de tarjeta
-formulario.inputNombre.addEventListener('keyup', (e) => {
-	let valorInput = e.target.value;
+// * INPUT: Card name
+form.inputName.addEventListener('keyup', (e) => {
+	let inputValue = e.target.value;
 
-	formulario.inputNombre.value = valorInput.replace(/[0-9]/g, '');
-	nombreTarjeta.textContent = valorInput;
-	firma.textContent = valorInput.replace(/[0-9]/g, '');
+	form.inputName.value = inputValue.replace(/[0-9]/g, '');
+	cardName.textContent = inputValue;
+	firm.textContent = inputValue.replace(/[0-9]/g, '');
 
-	if(valorInput == ''){
-		nombreTarjeta.textContent = 'Jhon Doe';
+	if(inputValue == ''){
+		cardName.textContent = 'Jhon Doe';
 	}
 
-	mostrarFrente();
+	showFront();
 });
 
-// * Select mes
-formulario.selectMes.addEventListener('change', (e) => {
-	mesExpiracion.textContent = e.target.value;
-	mostrarFrente();
+// * Month SELECT
+form.selectMonth.addEventListener('change', (e) => {
+	monthExpiration.textContent = e.target.value;
+	showFront();
 });
 
-// * Select Año
-formulario.selectYear.addEventListener('change', (e) => {
-	yearExpiracion.textContent = e.target.value.slice(2);
-	mostrarFrente();
+// * Year SELECT
+form.selectYear.addEventListener('change', (e) => {
+	yearExpiration.textContent = e.target.value.slice(2);
+	showFront();
 });
 
 // * CCV
-formulario.inputCCV.addEventListener('keyup', () => {
-	if(!tarjeta.classList.contains('active')){
-		tarjeta.classList.toggle('active');
+form.inputCCV.addEventListener('keyup', () => {
+	if(!card.classList.contains('active')){
+		card.classList.toggle('active');
 	}
 
-	formulario.inputCCV.value = formulario.inputCCV.value
-	// Eliminar los espacios
+	form.inputCCV.value = form.inputCCV.value
+	// Delete white spaces
 	.replace(/\s/g, '')
-	// Eliminar las letras
+	// Delete letters
 	.replace(/\D/g, '');
 
-	ccv.textContent = formulario.inputCCV.value;
+	ccv.textContent = form.inputCCV.value;
 });

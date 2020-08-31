@@ -10,7 +10,7 @@ body {
 	font-size: 16px;
 }
 
-.contenedor {
+.container {
 	width: 90%;
 	max-width: 62.5em;
 	padding: 2.5em 1.25em;
@@ -20,8 +20,8 @@ body {
 	align-items: center;
 }
 
-/* ---------- Estilos Generales de las Tarjetas ----------*/
-.tarjeta {
+/* ---------- Card general style ----------*/
+.card {
 	width: 100%;
 	max-width: 34.375em;
 	position: relative;
@@ -33,11 +33,11 @@ body {
 	z-index: 2;
 }
 
-.tarjeta.active {
+.card.active {
 	transform: rotateY(180deg);
 }
 
-.tarjeta > div {
+.card > div {
 	padding: 1.875em;
 	border-radius: 15px;
 	min-height: 19.6875em;
@@ -47,55 +47,55 @@ body {
 	box-shadow: 0 10px 10px 0 rgba(90,116,148,0.3);
 }
 
-/* ---------- Tarjeta Delantera ----------*/
+/* ---------- Card front ----------*/
 
-.tarjeta .delantera {
+.card .front {
 	width: 100%;
-	background: url(../img/bg-tarjeta/bg-tarjeta-02.jpg);
+	background: url(../img/bg-card/bg-card-02.jpg);
 	background-size: cover;
 }
 
-.delantera .logo-marca {
+.front .bank-logo {
 	text-align: right;
 	min-height: 3.125em;
 }
 
-.delantera .logo-marca img {
+.front .bank-logo img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 	max-width: 5em;
 }
 
-.delantera .chip {
+.front .chip {
 	width: 100%;
 	max-width: 3.125em;
 	margin-bottom: 1.25em;
 }
 
-.delantera .grupo .label {
+.front .group .label {
 	font-size: 1em;
 	color: #7d8994;
 	margin-bottom: 0.3125em;
 }
 
-.delantera .grupo .numero,
-.delantera .grupo .nombre,
-.delantera .grupo .expiracion {
+.front .group .number,
+.front .group .name,
+.front .group .expiration {
 	color: #fff;
 	font-size: 1.375em;
 	text-transform: uppercase;
 }
 
-.delantera .flexbox {
+.front .flexbox {
 	display: flex;
 	justify-content: space-between;
 	margin-top: 1.25em;
 }
 
-/* ---------- Tarjeta Trasera ----------*/
-.trasera {
-	background: url(../img/bg-tarjeta/bg-tarjeta-02.jpg);
+/* ---------- Card back ----------*/
+.back {
+	background: url(../img/bg-card/bg-card-02.jpg);
 	background-size: cover;
 	position: absolute;
 	top: 0;
@@ -103,7 +103,7 @@ body {
 	backface-visibility: hidden;
 }
 
-.trasera .barra-magnetica {
+.back .magnetic-bar {
 	height: 2.5em;
 	background: #000;
 	width: 100%;
@@ -112,39 +112,39 @@ body {
 	left: 0;
 }
 
-.trasera .datos {
+.back .data {
 	margin-top: 3.75em;
 	display: flex;
 	justify-content: space-between;
 }
 
-.trasera .datos p {
+.back .data p {
 	margin-bottom: 0.3125em;
 }
 
-.trasera .datos #firma {
+.back .data #firm {
 	width: 70%;
 }
 
-.trasera .datos #firma .firma {
+.back .data #firm .firm {
 	height: 2.5em;
 	background: repeating-linear-gradient(skyblue 0, skyblue 5px, orange 5px, orange 10px);
 }
 
-.trasera .datos #firma .firma p {
-	line-height: 2.5em;
+.back .data #firm .firm p {
+	line-height: 2.5rem;
 	font-family: 'Liu Jian Mao Cao', cursive;
 	color: #000;
-	font-size: 1.875em;
-	padding: 0 0.625em;
+	font-size: 1.875rem;
+	padding: 0 0.625rem;
 	text-transform: capitalize;
 }
 
-.trasera .datos #ccv {
+.back .data #ccv {
 	width: 20%;
 }
 
-.trasera .datos #ccv .ccv {
+.back .data #ccv .ccv {
 	background: #fff;
 	height: 2.5em;
 	color: #000;
@@ -152,18 +152,18 @@ body {
 	text-align: center;
 }
 
-.trasera .leyenda {
+.back .caption {
 	font-size: 0.875em;
 	line-height: 1.5em;
 }
 
-.trasera .link-banco {
+.back .bank-link {
 	font-size: 0.875em;
 	color: #fff;
 }
 
-/* ---------- Contenedor Boton ----------*/
-.contenedor-btn .btn-abrir-formulario {
+/* ---------- Container button ----------*/
+.container-btn .btn-open-form {
 	width: 3.125em;
 	height: 3.125em;
 	font-size: 1.25em;
@@ -181,16 +181,16 @@ body {
 	cursor: pointer;
 }
 
-.contenedor-btn .btn-abrir-formulario:hover {
+.container-btn .btn-open-form:hover {
 	background: #1850b1;
 }
 
-.contenedor-btn .btn-abrir-formulario.active {
+.container-btn .btn-open-form.active {
 	transform: rotate(45deg);
 }
 
-/* ---------- Formulario Tarjeta ----------*/
-.formulario-tarjeta {
+/* ---------- Card form ----------*/
+.card-form {
 	background: #fff;
 	width: 100%;
 	max-width: 43.75em;
@@ -203,20 +203,20 @@ body {
 	transition: clip-path .3s ease-out;
 }
 
-.formulario-tarjeta.active {
+.card-form.active {
 	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
-.formulario-tarjeta label {
+.card-form label {
 	display: block;
 	color: #7d8994;
 	margin-bottom: 0.3125em;
 	font-size: 1em;
 }
 
-.formulario-tarjeta input,
-.formulario-tarjeta select,
-.btn-enviar {
+.card-form input,
+.card-form select,
+.btn-send {
 	border: 2px solid #CED6E0;
 	font-size: 1.125em;
 	height: 3.125em;
@@ -226,46 +226,46 @@ body {
 	border-radius: 5px;
 }
 
-.formulario-tarjeta input:hover,
-.formulario-tarjeta select:hover {
+.card-form input:hover,
+.card-form select:hover {
 	border: 2px solid #93BDED;
 }
 
-.formulario-tarjeta input:focus,
-.formulario-tarjeta select:focus {
+.card-form input:focus,
+.card-form select:focus {
 	outline: rgb(4,4,4);
 	box-shadow: 1px 7px 10px -5px rgba(90,116,148,0.3);
 }
 
-.formulario-tarjeta input {
+.card-form input {
 	margin-bottom: 1.25em;
 	text-transform: uppercase;
 }
 
-.formulario-tarjeta .flexbox {
+.card-form .flexbox {
 	display: flex;
 	justify-content: space-between;
 }
 
-.formulario-tarjeta .expira {
+.card-form .expire {
 	width: 100%;
 }
 
-.formulario-tarjeta .ccv {
+.card-form .ccv {
 	min-width: 6.25em;
 }
 
-.formulario-tarjeta .grupo-select {
+.card-form .group-select {
 	width: 100%;
 	margin-right: 0.9375em;
 	position: relative;
 }
 
-.formulario-tarjeta select {
+.card-form select {
 	-webkit-appearance: none;
 }
 
-.formulario-tarjeta .grupo-select i {
+.card-form .group-select i {
 	position: absolute;
 	color: #CED6E0;
 	top: 1.125em;
@@ -273,11 +273,11 @@ body {
 	transition: .3s ease all;
 }
 
-.formulario-tarjeta .grupo-select:hover i {
+.card-form .group-select:hover i {
 	color: #93bfed;
 }
 
-.formulario-tarjeta .btn-enviar {
+.card-form .btn-send {
 	border: none;
 	padding: 0.625em;
 	font-size: 1.375em;
@@ -287,7 +287,7 @@ body {
 	cursor: pointer;
 }
 
-.formulario-tarjeta .btn-enviar:hover {
+.card-form .btn-send:hover {
 	background: #1850b1;
 }
 
@@ -295,10 +295,10 @@ body {
 	body {
 		font-size: 13px;
 	}
-	.formulario-tarjeta .flexbox {
+	.card-form .flexbox {
 		display: block;
 	}
-	.grupo-select {
+	.group-select {
 		margin-bottom: 1.25em;
 	}
 }

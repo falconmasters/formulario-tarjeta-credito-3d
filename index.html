@@ -4,98 +4,98 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Formulario de Tarjeta de Cr&eacute;dito Din&aacute;mico</title>
+	<title>Dynamic Credit Card Form</title>
 	<link href="https://fonts.googleapis.com/css?family=Lato|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<div class="contenedor">
+	<div class="container">
 
-		<!-- Tarjeta -->
-		<section class="tarjeta" id="tarjeta">
-			<div class="delantera">
-				<div class="logo-marca" id="logo-marca">
+		<!-- Card -->
+		<section class="card" id="card">
+			<div class="front">
+				<div class="bank-logo" id="bank-logo">
 					<!-- <img src="img/logos/visa.png" alt=""> -->
 				</div>
-				<img src="img/chip-tarjeta.png" class="chip" alt="">
-				<div class="datos">
-					<div class="grupo" id="numero">
-						<p class="label">N&uacute;mero Tarjeta</p>
-						<p class="numero">#### #### #### ####</p>
+				<img src="img/chip-card.png" class="chip" alt="">
+				<div class="data">
+					<div class="group" id="number">
+						<p class="label">Number card</p>
+						<p class="number">#### #### #### ####</p>
 					</div>
 					<div class="flexbox">
-						<div class="grupo" id="nombre">
-							<p class="label">Nombre Tarjeta</p>
-							<p class="nombre">Jhon Doe</p>
+						<div class="group" id="name">
+							<p class="label">Name card</p>
+							<p class="name">Jhon Doe</p>
 						</div>
 
-						<div class="grupo" id="expiracion">
-							<p class="label">Expiraci&oacute;n</p>
-							<p class="expiracion"><span class="mes">MM</span> / <span class="year">AA</span></p>
+						<div class="group" id="expiration">
+							<p class="label">Expiration</p>
+							<p class="expiration"><span class="month">MM</span> / <span class="year">AA</span></p>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<div class="trasera">
-				<div class="barra-magnetica"></div>
-				<div class="datos">
-					<div class="grupo" id="firma">
-						<p class="label">Firma</p>
-						<div class="firma"><p></p></div>
+			<div class="back">
+				<div class="magnetic-bar"></div>
+				<div class="data">
+					<div class="group" id="firm">
+						<p class="label">Firm</p>
+						<div class="firm"><p></p></div>
 					</div>
-					<div class="grupo" id="ccv">
+					<div class="group" id="ccv">
 						<p class="label">CCV</p>
 						<p class="ccv"></p>
 					</div>
 				</div>
-				<p class="leyenda">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus exercitationem, voluptates illo.</p>
-				<a href="#" class="link-banco">www.tubanco.com</a>
+				<p class="caption">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus exercitationem, voluptates illo.</p>
+				<a href="#" class="bank-link">www.yourbank.com</a>
 			</div>
 		</section>
 
-		<!-- Contenedor Boton Abrir Formulario -->
-		<div class="contenedor-btn">
-			<button class="btn-abrir-formulario" id="btn-abrir-formulario">
+		<!-- Container Button Open Form -->
+		<div class="container-btn">
+			<button class="btn-open-form" id="btn-open-form">
 				<i class="fas fa-plus"></i>
 			</button>
 		</div>
 
-		<!-- Formulario -->
-		<form action="" id="formulario-tarjeta" class="formulario-tarjeta">
-			<div class="grupo">
-				<label for="inputNumero">N&uacute;mero Tarjeta</label>
-				<input type="text" id="inputNumero" maxlength="19" autocomplete="off">
+		<!-- Form -->
+		<form action="" id="card-form" class="card-form">
+			<div class="group">
+				<label for="inputNumber">Number card</label>
+				<input type="text" id="inputNumber" maxlength="19" autocomplete="off">
 			</div>
-			<div class="grupo">
-				<label for="inputNombre">Nombre</label>
-				<input type="text" id="inputNombre" maxlength="19" autocomplete="off">
+			<div class="group">
+				<label for="inputName">Name</label>
+				<input type="text" id="inputName" maxlength="19" autocomplete="off">
 			</div>
 			<div class="flexbox">
-				<div class="grupo expira">
-					<label for="selectMes">Expiraci&oacute;n</label>
+				<div class="group expire">
+					<label for="selectmonth">Expiration</label>
 					<div class="flexbox">
-						<div class="grupo-select">
-							<select name="mes" id="selectMes">
-								<option disabled selected>Mes</option>
+						<div class="group-select">
+							<select name="month" id="selectMonth">
+								<option disabled selected>Month</option>
 							</select>
 							<i class="fas fa-angle-down"></i>
 						</div>
-						<div class="grupo-select">
+						<div class="group-select">
 							<select name="year" id="selectYear">
-								<option disabled selected>Año</option>
+								<option disabled selected>Year</option>
 							</select>
 							<i class="fas fa-angle-down"></i>
 						</div>
 					</div>
 				</div>
 
-				<div class="grupo ccv">
+				<div class="group ccv">
 					<label for="inputCCV">CCV</label>
 					<input type="text" id="inputCCV" maxlength="3">
 				</div>
 			</div>
-			<button type="submit" class="btn-enviar">Enviar</button>
+			<button type="submit" class="btn-send">Send</button>
 		</form>
 	</div>
 
