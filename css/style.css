@@ -301,4 +301,12 @@ body {
 	.group-select {
 		margin-bottom: 1.25em;
 	}
+	.back .data #firm .firm p {
+		font-size: 1.2rem;
+	}
+	.front .group .number,
+	.front .group .name,
+	.front .group .expiration {
+		font-size: 1.1em;
+	}
 }
