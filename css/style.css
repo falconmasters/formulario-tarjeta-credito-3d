@@ -51,7 +51,7 @@ body {
 
 .card .front {
 	width: 100%;
-	background: url(../img/bg-card/bg-card-02.jpg);
+	background: url(https://images.pexels.com/photos/2832382/pexels-photo-2832382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
 	background-size: cover;
 }
 
@@ -95,7 +95,7 @@ body {
 
 /* ---------- Card back ----------*/
 .back {
-	background: url(../img/bg-card/bg-card-02.jpg);
+	background: url(https://images.pexels.com/photos/2832382/pexels-photo-2832382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
 	background-size: cover;
 	position: absolute;
 	top: 0;
