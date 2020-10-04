@@ -171,6 +171,9 @@ body {
 	border: none;
 	cursor: pointer;
 }
+.btn-open-form:focus {
+	outline: none;
+}
 
 .container-btn .btn-open-form:hover {
 	background: #1850b1;
