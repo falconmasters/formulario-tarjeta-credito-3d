@@ -1,0 +1,22 @@
+.card
+	width: 100%
+	max-width: 34.375em
+	position: relative
+	color: #fff
+	transition: .3s ease all
+	transform: rotateY(0deg)
+	transform-style: preserve-3d
+	cursor: pointer
+	z-index: 2
+
+.card.active
+	transform: rotateY(180deg)
+
+.card > div
+	padding: 1.875em
+	border-radius: 15px
+	min-height: 19.6875em
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	box-shadow: 0 10px 10px 0 rgba(90,116,148,0.3)
