@@ -1,36 +1,32 @@
-.card .front
-	width: 100%
-	background: url(https://images.pexels.com/photos/2832382/pexels-photo-2832382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
-	background-size: cover
-
-.front .bank-logo
-	text-align: right
-	min-height: 3.125em
-
-.front .bank-logo img
-	width: 100%
-	height: 100%
-	object-fit: cover
-	max-width: 5em
-
-.front .chip
-	width: 100%
-	max-width: 3.125em
-	margin-bottom: 1.25em
-
-.front .group .label
-	font-size: 1em
-	color: #7d8994
-	margin-bottom: 0.3125em
-
-.front .group .number,
-.front .group .name,
-.front .group .expiration
-	color: #fff
-	font-size: 1.375em
-	text-transform: uppercase
-
-.front .flexbox
-	display: flex
-	justify-content: space-between
-	margin-top: 1.25em
+.card
+	.front
+		width: 100%
+		background: url(https://images.pexels.com/photos/2832382/pexels-photo-2832382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+		background-size: cover
+		.bank-logo
+			text-align: right
+			min-height: 3.125em
+			img
+				width: 100%
+				height: 100%
+				object-fit: cover
+				max-width: 5em
+		.chip
+			width: 100%
+			max-width: 3.125em
+			margin-bottom: 1.25em
+		.group
+			.label
+				font-size: 1em
+				color: $lbl-color
+				margin-bottom: 0.3125em
+			.number,
+			.name,
+			.expiration
+				color: $txt-color
+				font-size: 1.375em
+				text-transform: uppercase
+		.flexbox
+			display: flex
+			justify-content: space-between
+			margin-top: 1.25em

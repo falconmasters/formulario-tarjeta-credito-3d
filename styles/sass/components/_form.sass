@@ -1,84 +1,69 @@
 .card-form
-	background: #fff
-	width: 100%
-	max-width: 43.75em
-	padding: 9.375em 1.875em 1.875em 1.875em
-	border-radius: 10px
-	position: relative
-	top: -9.375em
-	z-index: 1
-	clip-path: polygon(0 0, 100% 0, 100% 0, 0 0)
-	transition: clip-path .3s ease-out
-
-.card-form.active
-	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
-
-.card-form label
-	display: block
-	color: #7d8994
-	margin-bottom: 0.3125em
-	font-size: 1em
-
-.card-form input,
-.card-form select,
-.btn-send
-	border: 2px solid #CED6E0
-	font-size: 1.125em
-	height: 3.125em
-	width: 100%
-	padding: 0.3125em 0.75em
-	transition: .3s ease all
-	border-radius: 5px
-
-.card-form input:hover,
-.card-form select:hover
-	border: 2px solid #93BDED
-
-.card-form input:focus,
-.card-form select:focus
-	outline: rgb(4,4,4)
-	box-shadow: 1px 7px 10px -5px rgba(90,116,148,0.3)
-
-.card-form input
-	margin-bottom: 1.25em
-	text-transform: uppercase
-
-.card-form .flexbox
-	display: flex
-	justify-content: space-between
-
-.card-form .expire
-	width: 100%
-
-.card-form .ccv
-	min-width: 6.25em
-
-.card-form .group-select
-	width: 100%
-	margin-right: 0.9375em
-	position: relative
-
-.card-form select
-	-webkit-appearance: none
-
-.card-form .group-select i
-	position: absolute
-	color: #CED6E0
-	top: 1.125em
-	right: 0.9375em
-	transition: .3s ease all
-
-.card-form .group-select:hover i
-	color: #93bfed
-
-.card-form .btn-send
-	border: none
-	padding: 0.625em
-	font-size: 1.375em
-	color: #fff
-	background: #2364d2
-	box-shadow: 2px 2px 10px 0px rgba(0,85,212,0.4)
-	cursor: pointer
-
-.card-form .btn-send:hover
-	background: #1850b1
+    background: $txt-color
+    width: 100%
+    max-width: 43.75em
+    padding: 9.375em 1.875em 1.875em 1.875em
+    border-radius: 10px
+    position: relative
+    top: -9.375em
+    z-index: 1
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0)
+    transition: clip-path .3s ease-out
+    &.active
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
+    label
+        display: block
+        color: $lbl-color
+        margin-bottom: 0.3125em
+        font-size: 1em
+    input,
+    select,
+    .btn-send
+        border: 2px solid lighten($lbl-color, 30%)
+        font-size: 1.125em
+        height: 3.125em
+        width: 100%
+        padding: 0.3125em 0.75em
+        transition: .3s ease all
+        border-radius: 5px
+    input:hover,
+    select:hover
+        border: 2px solid lighten($btn-color, 30%)
+    input:focus,
+    select:focus
+        outline: rgb(4,4,4)
+        box-shadow: 1px 7px 10px -5px rgba($btn-color,0.3)
+    input
+        margin-bottom: 1.25em
+        text-transform: uppercase
+    .flexbox
+        display: flex
+        justify-content: space-between
+    .expire
+        width: 100%
+    .ccv
+        min-width: 6.25em
+    .group-select
+        width: 100%
+        margin-right: 0.9375em
+        position: relative
+        i
+            position: absolute
+            color: lighten($lbl-color, 10%)
+            top: 1.125em
+            right: 0.9375em
+            transition: .3s ease all
+        &:hover i
+            color: lighten($btn-color, 20%)
+    select
+        -webkit-appearance: none
+    .btn-send
+        border: none
+        padding: 0.625em
+        font-size: 1.375em
+        color: $txt-color
+        background: $btn-color
+        box-shadow: 2px 2px 10px 0px rgba($btn-color,0.4)
+        cursor: pointer
+        &:hover
+            background: darken($btn-color, 10%)
